@@ -18,8 +18,10 @@
               ?>
             </select>
             <br>
-            <input type="submit" name="submit" value="Importer" />
+            <input type="submit" name="submit" value="Afficher" />
         </form>
-        
+        <form>
+            <input type="button" value="Retour au menu principal des données" onclick="history.go(-1)">
+        </form>
     </body>    
 </html>

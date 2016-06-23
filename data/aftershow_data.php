@@ -20,22 +20,24 @@ and open the template in the editor.
         if($dossier = opendir($application)) {
             while(false !== ($fichier = readdir($dossier))){
                 if($fichier != '.' && $fichier != '..' && $fichier != 'index.php'){                    
-                    $nb_fichier++; // On incrémente le compteur de 1
+                    $nb_fichier++;
                     $nomFichier = substr($fichier, 0, -4);
-                    $path = $application+$fichier;
+                    $path = $application."/".$fichier;
                     echo '<div id="data"><a href="'.$path.'"><li>' . $nomFichier . '</a></li></div>';
                 }            
             }      
-            echo '</ul><br/><br/><div id="footer">';
+            echo '</ul>';
             echo 'Il y a <strong>' . $nb_fichier .'</strong> tests dans la base</div>';
 
             closedir($dossier);
         }
  
-        else
+        else {
         echo 'Le dossier n\' a pas pu être ouvert';
-        
+        }
         ?>
-        
+        <form>
+            <input type="button" value="Aficher d'autre test" onclick="history.go(-1)">
+        </form>
     </body>
 </html>

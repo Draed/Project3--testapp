@@ -14,8 +14,8 @@ and open the template in the editor.
             <li><a href="show_data.php">Afficher les données</a></li>
             <li><a href="import_data.php">Importer un jeu de données</a></li>
         </ul>
-        <?php
-        // put your code here
-        ?>
+        <form>
+            <input type="button" value="Retour au menu principal" onclick="history.go(-1)">
+        </form>
     </body>
 </html>

@@ -14,8 +14,8 @@ and open the template in the editor.
             <li><a href="launch_test.php">Lancer un test</a></li>
             <li><a href="show_test.php">Afficher les tests</a></li>
         </ul>
-        <?php
-        // put your code here
-        ?>
+        <form>
+            <input type="button" value="Retour au menu principal" onclick="history.go(-1)">
+        </form>
     </body>
 </html>

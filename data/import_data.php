@@ -28,8 +28,8 @@ and open the template in the editor.
         <form>
             <input type="submit" name="submit" value="télécharger" />
         </form>
-        <?php
-        // put your code here
-        ?>
+        <form>
+            <input type="button" value="Retour au menu principal des données" onclick="history.go(-1)">
+        </form>
     </body>
 </html>
