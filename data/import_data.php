@@ -7,7 +7,7 @@ and open the template in the editor.
 <html>
     <head>
         <meta charset="UTF-8">
-        <title></title>
+        <title>Import de jeux de données</title>
     </head>
     <body>
         <form method="post" action="reception.php" enctype="multipart/form-data">

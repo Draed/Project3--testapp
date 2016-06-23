@@ -7,8 +7,8 @@
     </head>
             <h1>Accueil</h1>
             <ul>
-                <li><a href="data/data.php">Ajouter des données</a></li>
-                <li><a href="test/tests.php">Ajouter des tests</a></li>
+                <li><a href="data/data.php">Gérer les jeux de données</a></li>
+                <li><a href="test/tests.php">Gérer les tests</a></li>
             </ul>   
     <body>
     </body>
