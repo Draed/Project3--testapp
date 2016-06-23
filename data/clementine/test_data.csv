@@ -1,0 +1,2 @@
+application	environnement	url	login	password	custid	pathToChromeDriver	pathChromeBinary	pathfirefoxBinary
+clementine	integration	http://clementine-integration.si.reunion.ftm.francetelecom.fr/	DPVB6790	password	1.2596023	C:/My Program Files/temp/chromedriver.exe	C:/My Program Files/Chrome/Application/chrome.exe	C:/My Program Files/Mozilla Firefox/firefox.exe
