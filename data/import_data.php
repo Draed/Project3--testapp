@@ -10,14 +10,20 @@ and open the template in the editor.
         <title>Import de jeux de données</title>
     </head>
     <body>
-        <form method="post" action="reception.php" enctype="multipart/form-data">
+        <form method="post" action="afterimport_data.php" enctype="multipart/form-data">
             Fichier:<br>
-            <input type="text" name="file"><br>
-            <input type="hidden" name="MAX_FILE_SIZE" value="12345" />
+            <input type="file" name="file"><br>
             <br>
-            Application : 
-            <select name="Application">
-              <option value="1">1</option>
+            Ces jeux de sdonnées concèrnent l'application : 
+            <select name="application">
+            <?php 
+            $dir1 = scandir('.');
+              foreach($dir1 as $element) {
+                if (is_dir($element) && $element != '.' && $element != '..') {
+                    echo '<option value="'.$element .'">'.$element .'</option>';
+                }
+              }
+              ?>
             </select>
             <br>
             <input type="submit" name="submit" value="Importer" />
