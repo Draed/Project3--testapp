@@ -1,3 +1,5 @@
+<?php require('functions.php') ?>
+
 <!DOCTYPE html>
 <!--
 To change this license header, choose License Headers in Project Properties.
@@ -16,14 +18,7 @@ and open the template in the editor.
             <br>
             Ces jeux de données concèrnent l'application : 
             <select name="application">
-            <?php 
-            $dir1 = scandir('.');
-              foreach($dir1 as $element) {
-                if (is_dir($element) && $element != '.' && $element != '..') {
-                    echo '<option value="'.$element .'">'.$element .'</option>';
-                }
-              }
-              ?>
+                <?php getAllApps(); ?>
             </select>
             <input type="submit" name="submit" value="Importer" />
         </form>
@@ -32,14 +27,7 @@ and open the template in the editor.
         <form method="post" target="_blank" action="download_template.php">
             Télécharger le template de fichier de test pour l'application : 
             <select name="application">
-            <?php 
-            $dir1 = scandir('.');
-              foreach($dir1 as $element) {
-                if (is_dir($element) && $element != '.' && $element != '..') {
-                    echo '<option value="'.$element .'">'.$element .'</option>';
-                }
-              }
-              ?>
+                <?php getAllApps(); ?>
             </select>
             <input type="submit" name="telecharger" value="télécharger" />
         </form>

@@ -1,3 +1,5 @@
+<?php require('functions.php') ?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -8,14 +10,7 @@
         <form method="post" action="aftershow_data.php">
             Afficher les données pour l'application : 
             <select name="application">
-            <?php 
-            $dir1 = scandir('.');
-              foreach($dir1 as $element) {
-                if (is_dir($element) && $element != '.' && $element != '..') {
-                    echo '<option value="'.$element .'">'.$element .'</option>';
-                }
-              }
-              ?>
+            <?php getAllApps(); ?>
             </select>
             <br>
             <input type="submit" name="submit" value="Afficher" />
