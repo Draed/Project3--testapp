@@ -19,7 +19,7 @@ and open the template in the editor.
         echo '<ul>';
         if($dossier = opendir($application)) {
             while(false !== ($fichier = readdir($dossier))){
-                if($fichier != '.' && $fichier != '..' && $fichier != 'index.php'){                    
+                if($fichier != '.' && $fichier != '..' && $fichier != 'index.php' && $fichier != '.DS_Store'){                    
                     $nb_fichier++;
                     $nomFichier = substr($fichier, 0, -4);
                     $path = $application."/".$fichier;
