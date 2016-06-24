@@ -1,3 +1,7 @@
+<?php require('functions.php') ?>
+
+<?php include('../partials/_header.php') ?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -8,14 +12,7 @@
         <form method="post" action="aftershow_data.php">
             Afficher les données pour l'application : 
             <select name="application">
-            <?php 
-            $dir1 = scandir('.');
-              foreach($dir1 as $element) {
-                if (is_dir($element) && $element != '.' && $element != '..') {
-                    echo '<option value="'.$element .'">'.$element .'</option>';
-                }
-              }
-              ?>
+            <?php getAllApps(); ?>
             </select>
             <br>
             <input type="submit" name="submit" value="Afficher" />
@@ -24,4 +21,4 @@
             <input type="button" value="Retour au menu principal des données" onclick="history.go(-1)">
         </form>
     </body>    
-</html>
+<?php include('../partials/_footer.php') ?>
