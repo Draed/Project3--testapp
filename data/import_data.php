@@ -11,10 +11,10 @@ and open the template in the editor.
     </head>
     <body>
         <form method="post" action="afterimport_data.php" enctype="multipart/form-data" >
-            Fichier:<br>
+            Fichier :<br><br>
             <input type="file" name="file"><br>
             <br>
-            Ces jeux de sdonnées concèrnent l'application : 
+            Ces jeux de données concèrnent l'application : 
             <select name="application">
             <?php 
             $dir1 = scandir('.');
@@ -25,15 +25,25 @@ and open the template in the editor.
               }
               ?>
             </select>
-            <br>
             <input type="submit" name="submit" value="Importer" />
         </form>
         <br>
-        Templates : <br>
-        Télécharger le template de fichier de test
-        <form>
-            <input type="submit" name="submit" value="télécharger" />
+        Templates : <br><br>
+        <form method="post" target="_blank" action="download_template.php">
+            Télécharger le template de fichier de test pour l'application : 
+            <select name="application">
+            <?php 
+            $dir1 = scandir('.');
+              foreach($dir1 as $element) {
+                if (is_dir($element) && $element != '.' && $element != '..') {
+                    echo '<option value="'.$element .'">'.$element .'</option>';
+                }
+              }
+              ?>
+            </select>
+            <input type="submit" name="telecharger" value="télécharger" />
         </form>
+        <br>
         <form>
             <input type="button" value="Retour au menu principal des données" onclick="history.go(-1)">
         </form>
