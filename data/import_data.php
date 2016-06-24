@@ -10,7 +10,7 @@ and open the template in the editor.
         <title>Import de jeux de données</title>
     </head>
     <body>
-        <form method="post" action="afterimport_data.php" enctype="multipart/form-data">
+        <form method="post" action="afterimport_data.php" enctype="multipart/form-data" >
             Fichier:<br>
             <input type="file" name="file"><br>
             <br>
