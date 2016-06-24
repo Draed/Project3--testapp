@@ -1,1 +1,0 @@
-application	environnement	url	login	password	custid	pathToChromeDriver	pathChromeBinary	pathfirefoxBinary
