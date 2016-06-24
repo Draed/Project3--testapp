@@ -1,5 +1,7 @@
 <?php require('functions.php') ?>
 
+<?php include('../partials/_header.php') ?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -19,4 +21,4 @@
             <input type="button" value="Retour au menu principal des données" onclick="history.go(-1)">
         </form>
     </body>    
-</html>
+<?php include('../partials/_footer.php') ?>

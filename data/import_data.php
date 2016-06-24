@@ -1,16 +1,6 @@
 <?php require('functions.php') ?>
 
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title>Import de jeux de données</title>
-    </head>
+<?php include('../partials/_header.php') ?>
     <body>
         <form method="post" action="afterimport_data.php" enctype="multipart/form-data" >
             Fichier :<br><br>
@@ -36,4 +26,4 @@ and open the template in the editor.
             <input type="button" value="Retour au menu principal des données" onclick="history.go(-1)">
         </form>
     </body>
-</html>
+<?php include('../partials/_footer.php') ?>

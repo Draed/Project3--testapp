@@ -1,14 +1,4 @@
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <title></title> 
-    </head>
+<?php include('../partials/_header.php') ?>
     <body>
 <?php
 if (isset($_POST['application'])) {
@@ -38,4 +28,4 @@ else echo "le fichier ".$name_file." a bien été copié vers ".$content_dir."<b
         <input type="button" value="Retour au menu précédent" onclick="history.go(-1)">
     </form>
     </body>
-</html>
+<?php include('../partials/_footer.php') ?>
