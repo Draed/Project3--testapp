@@ -94,6 +94,10 @@ function getAllTestInUl() {
 }
 
 function startTest() {
+    if (isset($_GET['application'])) {$application=htmlentities($_GET['application']);}
+    if (isset($_GET['environnement'])) {$environnement=htmlentities($_GET['environnement']);}
+    if (isset($_GET['Donnees'])) {$Donnees=htmlentities($_GET['Donnees']);}
+    if (isset($_GET['Test'])) {$Test=htmlentities($_GET['Test']);}
     // if host OS is linux 
         //$execution = "do_build.sh"." ".$application." ".$environnement." ".$Donnees." ".$Test;
     //if host OS is windows

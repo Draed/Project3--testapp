@@ -6,11 +6,7 @@
         <title></title>
     </head>
     <body>
-        <?php echo $_GET['application'] ?>
-        <?php echo $_GET['environnement'] ?>
-        <?php echo $_GET['Donnees'] ?>
-        <?php echo $_GET['Test'] ?>
-        
+        Votre test est lancé, il s'affichera dans l'historique des tests dès qu'il sera achevé.
         <?php
         startTest();
         ?>

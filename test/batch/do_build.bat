@@ -1,9 +1,22 @@
-#####################################
-change the xml file with the chosen test
-#####################################
-$newvar = $oldvar -creplace '(?s)<classes>.*?</classes>', '$1'
+### variable d'entrée du script :
+#$1 = application 
+#$2 = environnement
+#$3 = Donnees
+#$4 = Test
+
+$dataSetName = $2+$3
+$path = data/$1/$dataSetName
 
 #####################################
-After changing the xml's file with the choosen test, launch it with testNG :
+changement dans le fichier data.xml pour le test a effectuer
 #####################################
-java -cp libs/$;bin org.testng.TestNG 
+####1) Mise en forme du test pour l'insertion dans le fichier de data .xml
+$insertTestName = <class name="$4"></class> 
+#####################################
+####2) insertion du test dans le fichier data :
+$testInsert = $oldvar -creplace '<classes>.*?</classes>', '$1'
+
+#####################################
+Après changement du fichier de données (.xml) lance le test avec testNG.
+#####################################
+java -cp libs/$;bin org.testng.TestNG $path
