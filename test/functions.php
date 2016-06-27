@@ -32,7 +32,7 @@ function getAllTest() {
         while(false !== ($fichier = readdir($dossier))){
             if($fichier != '.' && $fichier != '..' && $fichier != 'index.php' && $fichier != '.DS_Store' && $fichier != 'template.csv'){                    
                 $nb_fichier++;
-                $nomFichier = substr($fichier, 0, -4);
+                $nomFichier = substr($fichier, 0, -5);
                 echo '<option value="'. $nomFichier .'">'. $nomFichier .'</option>';
             }            
         }      
@@ -68,3 +68,35 @@ function getAllDatas() {
 	}
 }
 
+function getAllTestInUl() {
+	if (isset($_GET['application'])) {
+        $application=htmlentities($_GET['application']);
+    }
+    //liste les fichiers dans les dossiers de donnees
+    $nb_fichier = 0;
+    $html = '<ul>';
+    if($dossier = opendir($application)) {
+        while(false !== ($fichier = readdir($dossier))){
+            if($fichier != '.' && $fichier != '..' && $fichier != 'index.php' && $fichier != '.DS_Store' && $fichier != 'template.csv'){                    
+                $nb_fichier++;
+                $nomFichier = substr($fichier, 0, -5);
+                $html .= '<div id="data"><li>'. $nomFichier .'</li></div>';
+
+            }            
+        }
+        $html .= '</ul>';
+        $html .= 'Il y a <strong>' . $nb_fichier .'</strong> tests dans la base pour cette application</div>';
+        closedir($dossier);
+    } else {
+   		$html .= 'Le dossier n\' a pas pu être ouvert';
+	}
+        echo $html;
+}
+
+function startTest() {
+    // if host OS is linux 
+        //$execution = "do_build.sh"." ".$application." ".$environnement." ".$Donnees." ".$Test;
+    //if host OS is windows
+        $execution = "do_build.bat"." ".$application." ".$environnement." ".$Donnees." ".$Test;
+        shell_exec($execution);
+}

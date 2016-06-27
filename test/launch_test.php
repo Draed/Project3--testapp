@@ -6,6 +6,7 @@
         <title></title>
     </head>
     <body>
+        Lancer un test :
         <form action="afterlaunch_test.php">
             Application : 
             <select name="application">
@@ -17,11 +18,8 @@
            </select>            
             <input type="submit">
         </form>
-        <?php
-        // if linux 
-            //shell_exec("/home/user/bin/do_build.sh");
-        //if windows
-            //shell_exec("C:\\do_build.bat");
-        ?>
+        <form>
+            <input type="button" value="Retour au menu principal des tests" onclick="history.go(-1)">
+        </form>
     </body>
 </html>

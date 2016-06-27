@@ -22,7 +22,7 @@ $extension_upload = strtolower(  substr(  strrchr($_FILES['file']['name'], '.') 
 if ( in_array($extension_upload,$extensions_valides) );
 
 if( !move_uploaded_file($tmp_file, $content_dir."/".$name_file) ) echo("Impossible de copier".$name_file." dans ".$content_dir."<br>");
-else echo "le fichier ".$name_file." a bien été copié vers ".$content_dir."<br>";    
+else echo "le fichier ".$name_file." a bien été copié vers le dossier ".$content_dir."<br>";    
 ?>
     <form>
         <input type="button" value="Retour au menu précédent" onclick="history.go(-1)">
