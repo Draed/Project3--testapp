@@ -15,7 +15,7 @@
         <br>
         Templates : <br><br>
         <form method="post" target="_blank" action="download_template.php">
-            Télécharger le template de fichier de test pour l'application : 
+            Télécharger le template de fichier de jeux de données pour l'application : 
             <select name="application">
                 <?php getAllApps(); ?>
             </select>

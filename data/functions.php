@@ -1,7 +1,8 @@
 <?php
 
 /**
-* Get all the apps.
+* Get all the files from current folder. 
+* For data or test
 * @return void.
 */
 function getAllApps(){
@@ -15,7 +16,8 @@ function getAllApps(){
 }
 
 /**
-* Get all the files of a folder.
+* Get all the files of a selected application's folder.
+* Only for data folder 
 * @return $html, HTML.
 */
 function getDatasFromFolder() {
@@ -36,7 +38,7 @@ function getDatasFromFolder() {
             }            
         }      
         $html .= '</ul>';
-        $html .= 'Il y a <strong>' . $nb_fichier .'</strong> tests dans la base</div>';
+        $html .= 'Il y a <strong>' . $nb_fichier .'</strong> jeux de tests dans la base pour cette application</div>';
         closedir($dossier);
     } else {
    		$html .= 'Le dossier n\' a pas pu être ouvert';

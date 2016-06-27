@@ -1,34 +1,20 @@
+<?php require('functions.php') ?>
 <!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
 <html>
     <head>
         <meta charset="UTF-8">
         <title></title>
     </head>
     <body>
-        
-        <form action="action_page.php">
+        <form action="afterlaunch_test.php">
             Application : 
-            <select name="Application">
-              <option value="1">1</option>
+            <select name="application">
+               <?php getAllApps(); ?>
             </select>
             Environnement : 
-            <select name="Environnement">
-                <option value="1">1</option>
-            </select>
-            Test : 
-            <select name="Test">
-                <option value="1">1</option>
-            </select>
-            Données : 
-            <select name="Données">
-                <option value="1">1</option>
-            </select>
-            <br><br>
+            <select name="environnement">
+                 <?php getAllEnv(); ?>
+           </select>            
             <input type="submit">
         </form>
         <?php
