@@ -8,7 +8,7 @@ function getAllApps(){
 	$dir1 = scandir('.');
 
     foreach($dir1 as $element) {
-	    if (is_dir($element) && $element != '.' && $element != '..' && $element != 'scripts') {
+	    if (is_dir($element) && $element != '.' && $element != '..' && $element != 'scripts' && $element != 'batch') {
 	        echo '<option value="'.$element .'">'.$element .'</option>';
 	    }
     }
