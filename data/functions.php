@@ -16,7 +16,7 @@ function getAllApps(){
 }
 
 
-function getAllEnv() {
+Function getAllEnv() {
     $Env= array("integration","integration2","preprod","production");
     foreach($Env as $element) {
         echo '<option value="'.$element.'">'.$element.'</option>';
@@ -54,31 +54,37 @@ function getDatasFromFolder() {
     return $html;
 }
 
-function listeNombrefichier($application) {
-    $nb_fichier = 0;
-    if($dossier = opendir($application)) {
-        while(false !== ($fichier = readdir($dossier))){
-            if($fichier != '.' && $fichier != '..' && $fichier != 'index.php' && $fichier != '.DS_Store' && $fichier != 'template.csv'){                    
-                $nb_fichier++;
-            }            
-        }
-        closedir($dossier); 
-        return $nb_fichier+1;        
-    } else {
-        // return false;
-    }
-}  
+
+
 
 function importData() {
     //get variables
     if (isset($_POST['application'])) {
         $application=htmlentities($_POST['application']);
-        $nombreFichier = listeNombrefichier($application);
     }
     if (isset($_POST['environnement'])) {
-        $environnement=htmlentities($_POST['environnement']);
+    $environnement=htmlentities($_POST['environnement']);
     }
+    //function 
+    function listeNombrefichier() {
+        if (isset($_POST['application'])) {
+            $application=htmlentities($_POST['application']);
+        }
+        $nb_fichier = 0;
+        if($dossier = opendir($application)) {
+            while(false !== ($fichier = readdir($dossier))){
+                if($fichier != '.' && $fichier != '..' && $fichier != 'index.php' && $fichier != '.DS_Store' && $fichier != 'template.csv'){                    
+                    $nb_fichier++;
+                }            
+            }      
+                return $nb_fichier+1;
+            closedir($dossier);
+        } else {
 
+        }
+    }       
+    //var;
+    $nombreFichier = listeNombrefichier($application);
     $maxsize="4096";
     $extensions_valides = array( 'xml' );
     $tmp_file = $_FILES['file']['tmp_name'];

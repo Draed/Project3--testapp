@@ -6,7 +6,6 @@
         <title></title>
     </head>
     <body>
-        Votre test est lancé, il s'affichera dans l'historique, dès qu'il sera achevé.
         <?php startTest(); ?>
     </body>
         <form>

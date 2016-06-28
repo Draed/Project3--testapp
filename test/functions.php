@@ -69,8 +69,8 @@ function getAllDatas() {
 }
 
 function getAllTestInUl() {
-	if (isset($_GET['application'])) {
-        $application=htmlentities($_GET['application']);
+	if (isset($_POST['application'])) {
+        $application=htmlentities($_POST['application']);
     }
     //liste les fichiers dans les dossiers de donnees
     $nb_fichier = 0;
@@ -95,12 +95,19 @@ function getAllTestInUl() {
 
 function startTest() {
     if (isset($_GET['application'])) {$application=htmlentities($_GET['application']);}
+    else {echo 'paramètres manquant';}
     if (isset($_GET['environnement'])) {$environnement=htmlentities($_GET['environnement']);}
+    else {echo 'paramètres manquant';}
     if (isset($_GET['Donnees'])) {$Donnees=htmlentities($_GET['Donnees']);}
+    else {echo 'paramètres manquant';}
     if (isset($_GET['Test'])) {$Test=htmlentities($_GET['Test']);}
+    else {echo 'paramètres manquant';}
     // if host OS is linux 
         //$execution = "do_build.sh"." ".$application." ".$environnement." ".$Donnees." ".$Test;
     //if host OS is windows
         $execution = "do_build.bat"." ".$application." ".$environnement." ".$Donnees." ".$Test;
         shell_exec($execution);
+        if(shell_exec($execution)) {
+            echo "Votre test est lancé, il s'affichera dans l'historique, dès qu'il sera achevé.";
+        }
 }

@@ -18,7 +18,7 @@
             <input type="submit" name="submit" value="Afficher" />
         </form>
         <form>
-            <input type="button" value="Retour au menu principal des données" onclick="history.go(-1)">
+            <a href="data.php"><input type="button" value="Retour au menu principal des données"></a>
         </form>
     </body>    
 <?php include('../partials/_footer.php') ?>

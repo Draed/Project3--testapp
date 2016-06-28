@@ -15,7 +15,7 @@ and open the template in the editor.
             <li><a href="show_test.php">Afficher les tests</a></li>
         </ul>
         <form>
-            <input type="button" value="Retour au menu principal" onclick="history.go(-1)">
+            <a href="../index.php"><input type="button" value="Retour au menu principal"></a>
         </form>
     </body>
 </html>

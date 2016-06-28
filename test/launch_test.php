@@ -19,7 +19,7 @@
             <input type="submit">
         </form>
         <form>
-            <input type="button" value="Retour au menu principal des tests" onclick="history.go(-1)">
+            <a href="tests.php"><input type="button" value="Retour au menu principal des tests"></a>
         </form>
     </body>
 </html>

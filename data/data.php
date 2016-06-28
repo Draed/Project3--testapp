@@ -5,7 +5,7 @@
             <li><a href="import_data.php">Importer un jeu de données</a></li>
         </ul>
         <form>
-            <input type="button" value="Retour au menu principal" onclick="history.go(-1)">
+            <a href="../index.php"><input type="button" value="Retour au menu principal"></a>
         </form>
     </body>
 <?php include('../partials/_footer.php') ?>
