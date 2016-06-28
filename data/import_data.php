@@ -8,7 +8,11 @@
             <br>
             Ces jeux de données concèrnent l'application : 
             <select name="application">
-                <?php getAllApps(); ?>
+                <?= getAllApps(); ?>
+            </select>
+            Et l'environnement :
+            <select name="environnement">
+                <?= getAllEnv(); ?>
             </select>
             <input type="submit" name="submit" value="Importer" />
         </form>
