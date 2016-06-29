@@ -95,19 +95,26 @@ function getAllTestInUl() {
 
 function startTest() {
     if (isset($_GET['application'])) {$application=htmlentities($_GET['application']);}
-    else {echo 'paramètres manquant';}
+    else {echo 'paramètres manquant <br>';}
     if (isset($_GET['environnement'])) {$environnement=htmlentities($_GET['environnement']);}
-    else {echo 'paramètres manquant';}
+    else {echo 'paramètres manquant <br>';}
     if (isset($_GET['Donnees'])) {$Donnees=htmlentities($_GET['Donnees']);}
-    else {echo 'paramètres manquant';}
+    else {echo 'paramètres manquant <br>';}
     if (isset($_GET['Test'])) {$Test=htmlentities($_GET['Test']);}
-    else {echo 'paramètres manquant';}
+    else {echo 'paramètres manquant <br>';}
     // if host OS is linux 
         //$execution = "do_build.sh"." ".$application." ".$environnement." ".$Donnees." ".$Test;
     //if host OS is windows
-        $execution = "do_build.bat"." ".$application." ".$environnement." ".$Donnees." ".$Test;
-        shell_exec($execution);
-        if(shell_exec($execution)) {
-            echo "Votre test est lancé, il s'affichera dans l'historique, dès qu'il sera achevé.";
-        }
+    $execution = 'start batch/do_build_1.bat'.' '.$application.' '.$environnement.' '.$Donnees.' '.$Test;
+    $output = shell_exec($execution);
+    if(shell_exec($execution!= NULL)) {
+        echo "Votre test est lancé, il s'affichera dans l'historique, dès qu'il sera achevé.";
+    }
+    else {
+        echo "Une erreur est survenue, échec dans le lancement du test <br>";
+        #TODO delete these 2 (just for test)
+        echo 'vars : <br>';
+        echo $execution;
+        echo $output;
+    }
 }
